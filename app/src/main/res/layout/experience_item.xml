@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/v1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/border_experience"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingBottom="25dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp">
+
+
+        <TextView
+            android:id="@+id/lblExperiencePeriod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ff724c"
+            android:paddingBottom="2dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:paddingTop="2dp"
+            android:text="TextView"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/lblExperienceTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="TextView"
+            android:textColor="#555555"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblExperienceCompany"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="3dp"
+            android:text="TextView"
+            android:textColor="#a5a5a5"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/lblExperienceCompanyDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="3dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porttitor auctor nisi nec feugiat. Nulla consequat non nulla et laoreet. Integer id ipsum ac enim dignissim vehicula. Vivamus mattis nulla velit, at fringilla odio semper a. Ut est diam, tempor non dui sodales, luctus facilisis lectus. Nulla ultrices mi nec nisl aliquet tincidunt. Suspendisse convallis mattis risus, eget molestie risus posuere sed. Aenean vel urna dui. Nullam id laoreet tellus, et dignissim tortor. Integer fermentum dolor aliquet lobortis dictum. Vestibulum iaculis dui id nisl congue facilisis." />
+    </LinearLayout>
+</LinearLayout>

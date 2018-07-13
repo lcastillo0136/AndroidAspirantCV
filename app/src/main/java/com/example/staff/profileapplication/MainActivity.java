@@ -24,8 +24,10 @@ import java.util.Date;
 import java.util.HashMap;
 
 import android.provider.Settings.Secure;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TabHost;
 import android.widget.TextView;
@@ -115,45 +117,6 @@ public class MainActivity extends DAOBase {
 		
 		this._that = this;
 		
-		TabHost tabHost= (TabHost) findViewById(R.id.profile_categories);
-		tabHost.setup();
-		TabHost.TabSpec spec1 = tabHost.newTabSpec("Tab 1");
-		spec1.setIndicator("Skills");
-		spec1.setContent(R.id.tab1);
-		tabHost.addTab(spec1);
-		
-		TabHost.TabSpec spec2 = tabHost.newTabSpec("Tab 2");
-		spec2 .setIndicator("Experience");
-		spec2 .setContent(R.id.tab2);
-		tabHost.addTab(spec2);
-		final ScrollView mainscroll = _that.findViewById(R.id.main_scroll_view);
-
-		tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
-			@Override
-			public void onTabChanged(String tabId) {
-				//mainscroll.fullScroll(ScrollView.FOCUS_UP);
-				switch (tabId) {
-					case "Tab 1":
-						break;
-					case "Tab 2":
-						break;
-				}
-				
-				
-				_that._tabClicked = true;
-			}
-		});
-		
-		
-		mainscroll.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
-			@Override
-			public void onScrollChanged() {
-				if (_that._tabClicked) {
-					//mainscroll.fullScroll(ScrollView.FOCUS_UP);
-					_that._tabClicked = false;
-				}
-			}
-		});
 		
 		
 		Iconify.with(new FontAwesomeModule())
@@ -205,7 +168,7 @@ public class MainActivity extends DAOBase {
 		btnSend.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-			
+
 			}
 		});
 		
@@ -328,27 +291,63 @@ public class MainActivity extends DAOBase {
 	
 	public static void getTotalHeightofListView(ListView listView) {
 		
-		ListAdapter mAdapter = listView.getAdapter();
-		
-		if (mAdapter != null) {
-			int totalHeight = 0;
-			
-			for (int i = 0; i < mAdapter.getCount(); i++) {
-				View mView = mAdapter.getView(i, null, listView);
-				
-				mView.measure(
-						View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
-						
-						View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
-				
-				totalHeight += mView.getMeasuredHeight();
-			}
-			
-			ViewGroup.LayoutParams params = listView.getLayoutParams();
-			params.height = totalHeight + (listView.getDividerHeight() * (mAdapter.getCount() - 1));
-			//listView.setLayoutParams(params);
-			//listView.requestLayout();
+		ListAdapter myListAdapter = listView.getAdapter();
+		if (myListAdapter == null) {
+			//do nothing return null
+			return;
 		}
-		
+		//set listAdapter in loop for getting final size
+		int totalHeight = 0;
+		for (int size = 0; size < myListAdapter.getCount(); size++) {
+			View listItem = myListAdapter.getView(size, null, listView);
+			listItem.measure(0, 0);
+			
+			totalHeight += listItem.getMeasuredHeight() + listItem.getPaddingBottom() + listItem.getPaddingTop();
+		}
+		//setting listview item in adapter
+		ViewGroup.LayoutParams params = listView.getLayoutParams();
+		params.height = totalHeight + (listView.getDividerHeight() * (myListAdapter.getCount() - 1)) + listView.getPaddingBottom() + listView.getPaddingTop();;
+		listView.setLayoutParams(params);
+		// print height of adapter on log
 	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

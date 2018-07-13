@@ -4,22 +4,15 @@
 
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="10dp"
-    android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/v1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
 
+    android:orientation="vertical"
         android:background="@drawable/border_experience"
         android:gravity="center_vertical"
-        android:orientation="vertical"
         android:paddingBottom="25dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingTop="5dp">
-
 
         <TextView
             android:id="@+id/lblExperiencePeriod"
@@ -60,6 +53,6 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="3dp"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porttitor auctor nisi nec feugiat. Nulla consequat non nulla et laoreet. Integer id ipsum ac enim dignissim vehicula. Vivamus mattis nulla velit, at fringilla odio semper a. Ut est diam, tempor non dui sodales, luctus facilisis lectus. Nulla ultrices mi nec nisl aliquet tincidunt. Suspendisse convallis mattis risus, eget molestie risus posuere sed. Aenean vel urna dui. Nullam id laoreet tellus, et dignissim tortor. Integer fermentum dolor aliquet lobortis dictum. Vestibulum iaculis dui id nisl congue facilisis." />
+            android:text="obortis dictum. Vestibulum iaculis dui id nisl congue facilisis." />
     </LinearLayout>
-</LinearLayout>
+

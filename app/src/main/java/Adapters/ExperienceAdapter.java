@@ -70,7 +70,9 @@ public class ExperienceAdapter extends BaseAdapter {
 		this.notifyDataSetChanged();
 		ListView list = ((MainActivity)this.context).findViewById(R.id.list_experience);
 		if(list != null) {
-			((MainActivity) this.context).getTotalHeightofListView(list);
+			ViewGroup.LayoutParams params = list.getLayoutParams();
+			params.height = (this.getCount() * 350) + (list.getDividerHeight() * (this.getCount() - 1)) + list.getPaddingBottom() + list.getPaddingTop();;
+			list.setLayoutParams(params);
 		}
 	}
 	

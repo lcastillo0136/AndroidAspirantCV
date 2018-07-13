@@ -248,7 +248,9 @@
 
         </android.support.constraint.ConstraintLayout>
 
-        <android.support.constraint.ConstraintLayout
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/container_experience"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/employee_info"
@@ -262,77 +264,49 @@
             android:paddingRight="5dp"
             android:paddingTop="20dp">
 
-            <TabHost
-                android:id="@+id/profile_categories"
+            <ListView
+                android:id="@+id/list_experience"
+                android:layout_width="match_parent"
+                android:layout_height="247px"
+                android:divider="@color/colorPrimary"
+                tools:layout_editor_absoluteX="15dp"
+                tools:layout_editor_absoluteY="20dp"
+                android:scrollbars="none"
+                tools:listitem="@layout/experience_item">
+
+            </ListView>
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/container_skills"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/container_experience"
+            android:layout_margin="5dp"
+            android:layout_marginTop="5dp"
+            android:background="#fff"
+            android:elevation="4dp"
+            android:orientation="vertical"
+            android:paddingBottom="20dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="20dp">
+
+
+            <ListView
+                android:id="@+id/list_skills"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="5dp"
-                tools:layout_editor_absoluteY="20dp">
+                android:layout_weight="1"
+                android:divider="@color/colorPrimary"
+                tools:layout_editor_absoluteX="15dp"
+                tools:layout_editor_absoluteY="20dp"
+                tools:listitem="@layout/skill_item">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TabWidget
-                        android:id="@android:id/tabs"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0"
-                        android:orientation="horizontal" />
-
-                    <FrameLayout
-                        android:id="@android:id/tabcontent"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fadeScrollbars="false"
-                        android:fitsSystemWindows="false"
-                        android:isScrollContainer="false"
-                        android:measureAllChildren="true">
-
-                        <LinearLayout
-                            android:id="@+id/tab1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <ListView
-                                android:id="@+id/list_skills"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:divider="@color/colorPrimary"
-                                tools:layout_editor_absoluteX="15dp"
-                                tools:layout_editor_absoluteY="20dp"
-                                tools:listitem="@layout/skill_item">
-
-                            </ListView>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/tab2"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <ListView
-                                android:id="@+id/list_experience"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:divider="@color/colorPrimary"
-                                tools:layout_editor_absoluteX="15dp"
-                                tools:layout_editor_absoluteY="20dp"
-                                tools:listitem="@layout/experience_item">
-
-                            </ListView>
-                        </LinearLayout>
-
-                    </FrameLayout>
-                </LinearLayout>
-            </TabHost>
+            </ListView>
 
         </android.support.constraint.ConstraintLayout>
+
     </RelativeLayout>
 </ScrollView>
